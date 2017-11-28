@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>People List | 成大工業設計人群</title>
+</head>
+<body>
+
+<section class="section section-people">
+  <div class="content">
+    <h1 class="text-center h1" id="teachers">專任教師</h1>
+    <div class="row people-list" id="teachersList"></div>
+  </div>
+</section>
+<section class="section section-people section-people-highlight">
+  <div class="content">
+    <h1 class="text-center h1" id="ptTeachers">兼任教師</h1>
+<div class="row people-list" id="ptTeachersList"></div>
+  </div>
+</section>
+<section class="section section-people">
+  <div class="content">
+    <h1 class="text-center h1" id="projects">專案教師</h1>
+    <div class="row people-list" id="projectsList"></div>
+  </div>
+</section>
+
+<section class="section section-people section-people-highlight">
+  <div class="content">
+    <h1 class="text-center h1" id="JJs">行政團隊</h1>
+  <div class="row people-list" id="JJsList"></div>
+  </div>
+</section>
+
+<script src="https://mozilla.github.io/nunjucks/files/nunjucks.min.js"></script>
+<script>
+
+var peopleUnitTemp = `{% for person in group %}
+<div class="people-item">
+  <div class="people-img">
+    <a href="{{person.page}}" id="data-{{person.id}}">
+        {# 這裡要加個if來防呆 #}
+        {% if person.photoUrl.length > 5 %}
+          <img src="{{person.photoUrl}}" alt="{{person.name}}" class="img-people">
+        {% else %}
+          <div class="table img-people">
+            <div class="table-cell"> No Img {{person.photoUrl.length}} </div>
+          </div>
+        {% endif %}
+      </a>
+  </div>
+  <div class="people-info">
+    <div class="people-info-wrap">
+      <h4 class="titile">{{person.title}} </h4>
+      <h2 class="name">{{ person.name }}</h2>
+      <p class="phone">{{person.phone}}</p>
+      <a href="mailto:{{person.mail}}" class="email">{{person.mail}}</a>
+
+    </div>
+  </div>
+</div>
+{% endfor %}`;
+
+const peopleData = {
+  "teachers": [
+    {
+      "name": "何俊亨",
+      "id": "Ho_Chun_Heng",
+      "title": "副教授兼系主任",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Ho_Chun_Heng.jpg",
+      "mail": "hoch@mail.ncku.edu.tw",
+      "phone": "06-2757575 ext 54340",
+      "where": "國立成功大學工業設計系一館（大成館）二樓",
+      "group": "丁組：感性設計",
+      "experience": ["喬治亞理工學院 建築學院博士"],
+      "bio": "",
+      "pagehUrl": "",
+      "page": "/files/13-1417-170360.php?Lang=zh-tw"
+    },
+    {
+      "name": "馬敏元",
+      "id": "ma",
+      "title": "教授",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Ma_Min_Yuan.jpg",
+      "mail": "mamy@mail.ncku.edu.tw",
+      "phone": "06-2757575 ext 54319",
+      "where": "國立成功大學工業設計系一館（大成館）二樓",
+      "group": "丁組：感性設計",
+      "experience": ["日本國立千葉大學 人工物設計科學 博士", "日本國立千葉大學 設計科學產品計劃 碩士", "國立成功大學 工業設計學系 學士"],
+      "bio": "",
+      "publishUrl": "",
+      "page": "/files/13-1417-170630.php?Lang=zh-tw"
+    },
+    {
+      "name": "曾元琦",
+      "id": "yc-tseng",
+      "title": "副教授",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Tseng_Yuan_Chi.jpg",
+      "mail": "yctseng@mail.ncku.edu.tw",
+      "phone": "06-2757575 ext 54335",
+      "group": "丁組：感性設計",
+      "where": "國立成功大學工業設計系一館（大成館）二樓",
+      "experience": ["英國曼徹斯特大學 認知資訊學與互動設計博士", "Rachel C. Atkinson Postdoctoral Fellow, Smith-Kettlewell Eye Research Institute (2010-11, USA)", "Post-doctoral Research Associate, University of Illinois at Urbana-Champaign (2008-10, USA)", "PhD. in Interaction Design and Cognitive Informatics, University of Manchester (2005-09, UK)"],
+      "bio": "",
+      "publishUrl": "",
+      "page": "/files/13-1417-170631.php?Lang=zh-tw"
+    },
+    {
+      "name": "陳璽任",
+      "id": "hj-chen",
+      "title": "助理教授",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Chen_Hsi_Jen.jpg",
+      "mail": "hsijen_chen@mail.ncku.edu.tw",
+      "where": "國立成功大學工業設計系一館（大成館）二樓",
+
+      "phone": "06-2757575 ext 54321",
+      "group": "丁組：感性設計",
+      "experience": ["德國 國立威瑪包浩斯大學 藝術與設計 博士", "國立成功大學 工業設計所 碩士", "國立成功大學 工業設計系 學士"],
+      "bio": "",
+      "publishUrl": "",
+      "page": "/files/13-1417-170673.php?Lang=zh-tw"
+    },
+    {
+      "name": "蕭世文",
+      "id": "sw-hsiao",
+      "title": "特聘教授",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Hsiao_Shih_Wen.jpg",
+      "mail": "swhsiao@mail.ncku.edu.tw",
+      "where": "國立成功大學工業設計系二館二樓",
+      "phone": "06-2757575 ext 54330",
+      "group": "丙組：協同設計",
+      "experience": ["國立成功大學 機械工程博士", "國立成功大學 機械工程碩士", "逢甲大學 機械工程學士"],
+      "bio": "",
+      "publishUrl": "",
+      "page": "/files/13-1417-170674.php?Lang=zh-tw"
+    },
+    {
+      "name": "謝孟達",
+      "id": "Shieh_Meng_Da",
+      "title": "副教授",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Shieh_Meng_Da.jpg",
+      "where": "國立成功大學工業設計系二館二樓",
+      "mail": "mdshieh@mail.ncku.edu.tw",
+      "phone": "06-2757575 ext 54323",
+      "group": "丙組：協同設計",
+      "experience": ["美國佛羅里達大學 機械工程博士", "美國佛羅里達大學 機械工程碩士", "國立中興大學 機械工程學士"],
+      "bio": "",
+      "publishUrl": "",
+      "page":"/files/13-1417-170675.php?Lang=zh-tw",
+    },
+    {
+      "name": "周君瑞",
+      "id": "Chou_Chun_Jui",
+      "title": "副教授",
+      "where": "國立成功大學工業設計系二館二樓",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Chou_Chun_Jeng.jpg",
+      "mail": "cjchou@mail.ncku.edu.tw",
+      "phone": "06-2757575 ext 54329",
+      "group": "甲組：策略設計",
+      "experience": ["美國伊利諾理工學院 設計博士"],
+      "bio": "",
+      "publishUrl": "",
+      "page": "/files/13-1417-170676.php?Lang=zh-tw"
+    },
+    {
+      "name": "劉說芳",
+      "id": "Liou_Shou_Fang",
+      "where": "國立成功大學工業設計系二館二樓",
+      "title": "教授",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Lui_Shou_Fang.jpg",
+      "mail": "liusf@mail.ncku.edu.tw",
+      "phone": "06-2757575 ext 54322",
+      "group": "甲組：策略設計",
+      "experience": ["國立中央大學 電機工程博士","國立成功大學 工業設計碩士"],
+      "bio": "",
+      "publishUrl": "",
+      "page": "/files/13-1417-170678.php?Lang=zh-tw"
+    },
+
+    {
+      "name": "吳豐光",
+      "id": "Wu_Fong_Gong",
+      "title": "特聘教授兼設計學院院長",
+      "where": "國立成功大學工業設計系二館二樓",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Wu_Fong_Gong.jpg",
+      "mail": "fonggong@mail.ncku.edu.tw",
+      "phone": "06-2757575 ext 54333",
+      "group": "乙組：人因與互動設計",
+      "experience": ["MID (Master of Industrial Design), School of Art, Syracuse University (1983.09-1985.06)","Distinguished Professor, Department of Industrial Design, National Cheng Kung University (2011.08- )","Vice Dean, College of Planning and Design, National Cheng Kung University (2007.05-2008.07) (2010.08- )","Executive Board Member, International Association of Societies of Design Research (IASDR) (2009.03- )","President, Chinese Institute of Design (CID) (2009.03-2011.05)","Publisher, International Journal of Design (SCI, SSCI, A&HCI) (2009.03-2011.05)","Publisher, Journal of Design (in Chinese) (TAHCI core) (2009.03-2011.05)","Visiting Scholar, CMS, MIT, USA (2009.04-2009.07)","Visiting Professor, ID, IIT, USA (2008.10-2009.02)","Founder Head, Institute of Industrial Design, National Cheng Kung University (1991.08-1992.07)","Chairman, Department of Industrial Design, National Cheng Kung University (1989.08-1992.07 )","Secretary General, China Industrial Designer Association (CIDA) (1989.01-1990.12)","Faculty Member, Department of Industrial Design, National Cheng Kung University (1977.08- )"],
+      "bio": "",
+      "publishUrl": "",
+      "page": "/files/13-1417-170680.php?Lang=zh-tw"
+    },
+
+    {
+      "name": "陳建旭",
+      "id": "Chen_Chien_Hsu",
+      "where": "國立成功大學工業設計系二館二樓",
+      "title": "教授",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Chen_Chien_Hsu.jpg",
+      "mail": "chenhsu@mail.ncku.edu.tw",
+      "phone": "06-2757575 ext 54324",
+      "group": "乙組：人因與互動設計",
+      "experience": ["工業工程 博士, 美國德州大學阿靈頓分校 (1992/08~1996/08)","電腦資訊 碩士, 美國雪城大學 (1990/08 ~ 1992/07)","工業設計 學士, 國立成功大學 (1983/08 ~ 1987/06)","國立師大附中 (480 班 畢業)"],
+      "bio": "",
+      "publishUrl": "",
+      "page": "/files/13-1417-170679.php?Lang=zh-tw"
+    },
+    {
+      "name": "洪郁修",
+      "id": "Hung_Yu_Hsiu",
+      "where": "國立成功大學工業設計系二館二樓",
+      "title": "副教授",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Hung_Yu_Hsiu.jpg",
+      "mail": "idhfhung@mail.ncku.edu.tw",
+      "phone": "06-2757575 ext 54327",
+      "group": "乙組：人因與互動設計",
+      "experience": ["Ph.D., Industrial and Systems Engineering (Human Factors and Ergonomics), Virginia Tech"],
+      "bio": "",
+      "publishUrl": "",
+      "page": "/files/13-1417-170687.php?Lang=zh-tw"
+    },
+    {
+      "name": "林彥呈",
+      "id": "Lin_Yang_Cheng",
+      "title": "教授",
+      "where": "國立成功大學工業設計系二館二樓",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/photo_placeholder.png",
+      "mail": "lyc0914@mail.ncku.edu.tw",
+      "phone": "06-2757575 ext 54328",
+      "page": "/files/13-1417-171198.php?Lang=zh-tw"
+    }
+  ],
+  "ptteachers":[
+    {
+      "name": "陳中聖",
+      "id": "Chen_Chung_Sheng",
+      "title": "講師",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Chen_Chung_Sheng.jpg",
+      "experience": ["成大工業設計學士"],
+      "page": "/files/13-1417-170682.php?Lang=zh-tw"
+    },
+    {
+      "name": "陳劭農",
+      "id": "Chen_Shao_Nung",
+      "title": "助理教授",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Chen_Shao_Nung.jpg",
+      "experience": ["國立成功大學工業設計學系博士", "國立成功大學 兼任助理教授", "國立成功大學 兼任講師", "有俊企業股份有限公司 專任設計師", "樹德科技大學 兼任講師", "台南女中 兼任講師"]
+    },
+    {
+      "name": "莊惠棋",
+      "id": "Chuang_Huei_Chi",
+      "title": "講師",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Chuang_Huei_Chi.jpg",
+      "experience": ["美國 The City College of New York Fine Arts 碩士"]
+    },
+    {
+      "name": "羅逸文",
+      "id": "Lo_Yi_Wen",
+      "title": "講師",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Lo_Yi_Wen.jpg",
+      "experience": ["國立成功大學 工業設計學系 碩士"]
+    },
+    {
+      "name": "魏仲君",
+      "id": "Wei_Chung_Chun",
+      "title": "專家",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143//img-Wei_Chung_Chun.jpg",
+      "experience": ["南台工專機械工程科學士"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "林雅惠",
+      "id": "Ya_Hung_Lin",
+      "title": "講師",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Lin_Ya_Hui.jpg",
+      "mail": "z10602016@email.ncku.edu.tw ",
+      "phone": "06-2757575 ext 54339",
+      "where": "工設系二館二樓53212",
+      //"group": "丁組：感性設計",
+      "experience": [""],
+      "bio": "",
+      "publishUrl": "",
+      "page": "/files/13-1417-170686.php?Lang=zh-tw"
+    },
+  ],
+  "JJs": [
+    {
+      "name": "王膺慈",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Wang_Ying_Tsz.jpg",
+      "mail": "apo528@gmail.com",
+      "phone": "06-2757575 ext 54343",
+      "title": "系所教務",
+      "job": ["教務（大學部招生試務、研究所招生試務、開排課業務、其他學生相關教務工作）", "創意設計學程"]
+    },
+    {
+      "name": "鮑彥君",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/img-Bau_Yen_Chun.jpg",
+      "mail": "jeannckuid@gmail.com",
+      "phone": "06-2757575 ext 54343",
+      "title": "國際相關事務",
+      "job": ["教育部藝術與設計菁英海外培訓計畫（產品設計組） http://www.ide.ncku.edu.tw/sposad",  "系所交換學生", "系所交換學生", "系所獎助學金", "國際交流相關事務"]
+    },
+    {
+      "name": "李易睿",
+      "photoUrl": "http://bg004.web.ncku.edu.tw/ezfiles/417/1417/img/3143/photo_placeholder.png",
+      "mail": "z10501031@email.ncku.edu.tw",
+      "phone": "06-2757575 ext 54306",
+      "title": "薦任技士",
+      "job": ["實施木工教學課程- 機具使用分級認證機制", "開放設計學院木工坊工廠實作空間共享", "連結產業資源與偕同業師進駐", "活化機具使用與空間維護", "學院計劃執行與撰寫", "系所業務相關交辦工作"]
+    }
+  ]
+};
+
+function renderToScreen (blockID, data) { 
+ const template = nunjucks.compile(peopleUnitTemp);
+ var res = template.render({ group: data });
+ console.log(res);
+ document.getElementById(blockID).innerHTML = res;
+}
+renderToScreen("teachersList", peopleData.teachers);
+renderToScreen("ptTeachersList", peopleData.ptteachers);
+renderToScreen("projectsList", peopleData.projects);
+renderToScreen("JJsList", peopleData.JJs);
+  
+</script>
+  
+</body>
+</html>
