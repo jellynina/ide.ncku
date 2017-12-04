@@ -1,6 +1,11 @@
 # 很多很多問題的ePage
 
+## 2017.12.04
 
+- 後台連結更動：[登入](http://bgc004.web.ncku.edu.tw/admin/main.php)
+- 目前樣式CSS連結 [link](http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/static/combine-zh-tw.css)
+- 頁頭更新，wiki還沒有更改
+- 收到明年一月會換CMS，所有圖檔必須要備份
 
 ## People List
 
