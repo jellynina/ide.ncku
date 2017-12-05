@@ -81,7 +81,7 @@ $g-head-index: 300;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   background-color: #FFF;
 
   .h1{
@@ -92,6 +92,7 @@ $g-head-index: 300;
 .g-logo-img{
   width: 200px;
   height: 83px;
+  display: block;
 }
 
 .head-col-logo{
