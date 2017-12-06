@@ -1,5 +1,11 @@
 # 很多很多問題的ePage
 
+
+## 2017.12.06
+
+1. 將Vue Componets files 建立程模組
+2. image setting width 100% will bigger than parent div. But not in local dev. 先用暴力解
+
 ## 2017.12.04
 
 - 後台連結更動：[登入](http://bgc004.web.ncku.edu.tw/admin/main.php)
