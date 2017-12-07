@@ -4,7 +4,7 @@
     <div class="head-containt">
       <h1 class="h1 text-center">課程規劃</h1>
       <div class="head-nav-list">
-        <a href="#coursePlan" class="btn-action scroll"><span class="btn-action-txt">規劃<br>重點 </span></a>
+        <!-- <a href="#coursePlan" class="btn-action scroll"><span class="btn-action-txt">規劃<br>重點 </span></a> -->
       <a href="#underGraduated" class="btn-action scroll"><span class="btn-action-txt">大學部<br>課程</span></a>
       <a href="#graduated" class="btn-action scroll"><span class="btn-action-txt">碩博班<br>課程</span> </a>
       <a href="#special" class="btn-action scroll"><span class="btn-action-txt">碩專班<br>課程</span> </a>
@@ -12,21 +12,29 @@
     </div>
     <img class="absolute-base-img" src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/01.jpg" alt="國立成功大學系上課程">
   </div>
-  <img src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/02.jpg" alt="Norway" width="100%" height="auto">
-  <img src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/03.jpg" alt="Norway" width="100%" height="auto">
-  <div class="big-button-group" style="background:#f9ede9">
-    <a href="http://www.ide.ncku.edu.tw/root/files/2012/11/1/4629">大學部相關修業辦法</a>
-    <a href="http://www.ide.ncku.edu.tw/root/files/2010/10/29/221">工設系通識教育目標與規定</a>
+  <div id="underGraduated">
+    <img src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/02.jpg" alt="Norway" width="100%" height="auto">
+    <img src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/03.jpg" alt="Norway" width="100%" height="auto">
+    <div class="big-button-group" style="background:#f9ede9">
+      <a href="http://www.ide.ncku.edu.tw/root/files/2012/11/1/4629">大學部相關修業辦法</a>
+      <a href="http://www.ide.ncku.edu.tw/root/files/2010/10/29/221">工設系通識教育目標與規定</a>
+    </div>
   </div>
-  <img src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/04.jpg" alt="Norway" width="100%" height="auto">
-  <img src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/05--.jpg" alt="Norway" width="100%" height="auto">
-  <div class="big-button-group" style="background:#f9ede9">
-    <a href="http://www.ide.ncku.edu.tw/root/files/2010/10/18/86">工設所碩士課程相關修業辦法</a>
-    <a href="http://www.ide.ncku.edu.tw/root/files/2012/11/1/4628">工設所博士課程相關修業辦法</a>
+
+  <div id="graduated">
+    <img src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/04.jpg" alt="Norway" width="100%" height="auto">
+    <img src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/05--.jpg" alt="Norway" width="100%" height="auto">
+    <div class="big-button-group" style="background:#f9ede9">
+      <a href="http://www.ide.ncku.edu.tw/root/files/2010/10/18/86">工設所碩士課程相關修業辦法</a>
+      <a href="http://www.ide.ncku.edu.tw/root/files/2012/11/1/4628">工設所博士課程相關修業辦法</a>
+    </div>
   </div>
-  <img src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/06--.jpg" alt="Norway" width="100%" height="auto">
-  <div class="big-button-group" style="background:#f9e8dc">
+
+  <div id="special">
+    <img src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/06--.jpg" alt="Norway" width="100%" height="auto">
+    <div class="big-button-group" style="background:#f9e8dc">
     <a href="http://www.ide.ncku.edu.tw/root/files/2010/10/18/96">工設所碩專課程相關修業辦法</a>
+    </div>
   </div>
 </div>
 
@@ -116,5 +124,27 @@ export default {
   }
 }
 
+.big-button-group{
+  margin:0 auto;
+  text-align:center;
+  line-height:60px;
+  overflow:hidden;
+}
+.big-button-group a{
+  display:inline-block;
+  color:#ffffff;
+  font-size:18px;
+  border-radius:60px;
+  background:#973133;
+  padding:0px 40px;
+  margin: 20px;
+}
+
 
 </style>
+
+<!--
+
+
+
+-->
