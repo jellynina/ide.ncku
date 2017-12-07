@@ -5,6 +5,15 @@
 
 1. 將Vue Componets files 建立程模組
 2. image setting width 100% will bigger than parent div. But not in local dev. 先用暴力解
+3. 終於找到論壇的[入口](http://bgc004.web.ncku.edu.tw/bin/bbindex.php)了
+
+
+過程中需要用的線上工具
+
+- [Compression](https://compressor.io/) : 可以把圖片做低失真壓縮
+- [SassMeister](https://www.sassmeister.com/)
+- [Css Compressor](https://csscompressor.com/)
+
 
 ## 2017.12.04
 
