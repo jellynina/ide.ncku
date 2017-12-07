@@ -1,0 +1,40 @@
+/* ============================
+把常用的樣式整理到這邊
+*/
+
+
+/*
+- Typography
+*/
+// ## h1-h3
+
+
+// text-size
+
+// text-alignment 
+/// maybe a mixin?
+
+.text-center{
+  text-align: center;
+}
+
+
+/*
+- Images
+*/
+
+.absolute-base-img{
+  /// .parentOf-absolute
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+/*
+- Btn
+*/

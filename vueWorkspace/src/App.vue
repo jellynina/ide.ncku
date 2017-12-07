@@ -9,7 +9,7 @@
             <TheHeader/>
             <div class="fake-content">
               <p>here are the content zpne</p>
-              <ideMap/>
+              <coursePage/>
             </div>
 
           </div><!-- ePage outliner closing -->
@@ -25,10 +25,12 @@
 <script>
 import TheHeader from './components/Header.vue'
 import ideMap from './components/Map.vue'
+import coursePage from './components/CoursePage.vue'
 export default {
   components:{
     TheHeader,
-    ideMap
+    ideMap,
+    coursePage
 
   }
 }
@@ -53,7 +55,7 @@ img{
 
 
 .fake-content{
-  height: 150vh;
+  padding: 12px 0;
 }
 
 
