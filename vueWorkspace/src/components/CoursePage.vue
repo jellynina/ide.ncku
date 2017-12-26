@@ -4,7 +4,6 @@
     <div class="head-containt">
       <h1 class="h1 text-center">課程規劃</h1>
       <div class="head-nav-list">
-        <!-- <a href="#coursePlan" class="btn-action scroll"><span class="btn-action-txt">規劃<br>重點 </span></a> -->
       <a href="#underGraduated" class="btn-action scroll"><span class="btn-action-txt">大學部<br>課程</span></a>
       <a href="#graduated" class="btn-action scroll"><span class="btn-action-txt">碩博班<br>課程</span> </a>
       <a href="#special" class="btn-action scroll"><span class="btn-action-txt">碩專班<br>課程</span> </a>
@@ -13,7 +12,7 @@
     <img class="absolute-base-img" src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/01.jpg" alt="國立成功大學系上課程">
   </div>
   <div id="underGraduated">
-    <img src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/02.jpg" alt="Norway" width="100%" height="auto">
+    <img src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/02.jpg" alt="Norway">
     <img src="http://bgc004.web.ncku.edu.tw/ezfiles/417/1417/img/3139/03.jpg" alt="Norway" width="100%" height="auto">
     <div class="big-button-group" style="background:#f9ede9">
       <a href="http://www.ide.ncku.edu.tw/root/files/2012/11/1/4629">大學部相關修業辦法</a>
@@ -91,7 +90,7 @@ export default {
   }
 }
 
-.head-nav-list{
+.course-head .head-nav-list{
   display: flex;
   justify-content: center;
   .btn-action{
